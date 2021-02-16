@@ -1,0 +1,7 @@
+FROM ubuntu:20.04
+
+RUN apt update -y
+
+RUN apt install iptables iproute2 wireguard -y --no-install-recommends
+
+ENTRYPOINT ["/bin/bash", "/config/wg_run.sh"]
